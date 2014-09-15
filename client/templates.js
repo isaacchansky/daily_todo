@@ -32,17 +32,12 @@
 
     // includes/todo.jade compiled template
     templatizer["includes"]["todo"] = function tmpl_includes_todo() {
-        return '<li class="todo list-group-item"><a data-hook="task"></a><span class="btn-group pull-right"><a data-hook="action-edit" class="btn btn-default">edit</a><a href="#" data-hook="action-delete" class="btn btn-danger">delete</a></span></li>';
-    };
-
-    // pages/collectionDemo.jade compiled template
-    templatizer["pages"]["collectionDemo"] = function tmpl_pages_collectionDemo() {
-        return '<section class="page pageOne"><h2>Collection demo</h2><p>Intelligently rendering collections can be a bit tricky.</p><p><a href="https://github.com/ampersandjs/ampersand-view">ampersand-view\'s</a> <code>renderCollection()</code> method makes it simple.</p><p>The only code required to manage the collection is:</p><pre><code>this.renderCollection(\n   this.collection,\n   TodoView,\n   this.queryByHook(\'todos-list\')\n);</code></pre><h3>To Do container:</h3><ul data-hook="todos-list" class="list-group"></ul><p>Try it by clicking the buttons</p><div class="buttons btn-group"><button data-hook="reset" class="btn btn-default">.reset()</button><button data-hook="fetch" class="btn btn-default">.fetch()</button><button data-hook="shuffle" class="btn btn-default">.shuffle()</button><a href="/todo/add" class="btn btn-default">Add To Do</a></div><p>Events are always managed so you don\'t get any leaks.</p></section>';
+        return '<li class="todo list-group-item"><a data-hook="task"></a><span class="btn-group btn-group-xs pull-right"><a data-hook="action-edit" class="btn btn-default">edit</a><a href="#" data-hook="action-delete" class="btn btn-danger">delete</a></span></li>';
     };
 
     // pages/home.jade compiled template
     templatizer["pages"]["home"] = function tmpl_pages_home() {
-        return '<section class="page home"><h2>Welcome to a skeleton for Daily To Do</h2><ul data-hook="todos-list" class="list-group"></ul><div class="buttons btn-group"><button data-hook="reset" class="btn btn-default">.reset()</button><button data-hook="fetch" class="btn btn-default">.fetch()</button><button data-hook="shuffle" class="btn btn-default">.shuffle()</button><a href="/todo/add" class="btn btn-default">Add To Do</a></div></section>';
+        return '<section class="page home"><h2>Welcome to a skeleton for Daily To Do</h2><ul data-hook="todos-list" class="list-group"></ul><div class="buttons btn-group"><button data-hook="fetch" class="btn btn-default">.fetch()</button><a href="/todo/add" class="btn btn-default">Add To Do</a></div></section>';
     };
 
     // pages/info.jade compiled template

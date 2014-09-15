@@ -7,7 +7,7 @@ module.exports = PageView.extend({
     pageTitle: 'home',
     template: templates.pages.home,
     events: {
-      'click [data-hook~=add]': 'addRandom'
+      'click [data-hook~=fetch]': 'fetchCollection'
     },
     render: function(){
       this.renderWithTemplate();
