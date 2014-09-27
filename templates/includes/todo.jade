@@ -1,5 +1,10 @@
-li.todo.list-group-item
-  a(data-hook="task")
-  span.btn-group.btn-group-xs.pull-right
-    a.btn.btn-default(data-hook="action-edit") edit
-    a.btn.btn-danger(href="#", data-hook="action-delete") delete
+li.todo.list-group-item(data-hook="complete")
+  .task
+    input(type="checkbox", data-hook="action-complete")
+    a(data-hook="task")
+    span.btn-group.btn-group-xs.pull-right
+      a.btn.btn-default(data-hook="action-edit") edit
+      a.btn.btn-danger(href="#", data-hook="action-delete") delete
+  .summary
+    textarea(data-hook="summary", name="summary", cols="30", rows="3", placeholder="How'd it go?")
+    button(data-hook="action-update-summary") done!
