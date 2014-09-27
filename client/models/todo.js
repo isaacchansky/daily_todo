@@ -9,7 +9,8 @@ module.exports = AmpersandModel.extend({
         isComplete: ['boolean', true, false]
     },
     session: {
-        active: ['boolean', true, false]
+        active: ['boolean', true, false],
+        summarizing: ['boolean', true, false]
     },
     derived: {
         editUrl: {

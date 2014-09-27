@@ -24,7 +24,6 @@ module.exports = View.extend({
             {
                 type: 'booleanClass',
                 hook: 'complete',
-                name: 'complete',
                 yes: 'completed',
                 no: 'incomplete'
             },
@@ -34,26 +33,46 @@ module.exports = View.extend({
                 name: 'checked',
             }
         ],
+        'model.summarizing': {
+            type: 'toggle',
+            hook: 'summary-section'
+        }
     },
     events: {
         'click [data-hook~=action-delete]': 'handleRemoveClick',
         'change [data-hook~=action-complete]': 'toggleComplete',
-        'click [data-hook~=action-update-summary]': 'updateSummary'
+        'click [data-hook~=action-update-summary]': 'updateSummary',
+        'click [data-hook~=action-expand]': 'showFullTaskWithSummary'
     },
+    // EVENT HANDLERS
     handleRemoveClick: function () {
         this.model.destroy();
         return false;
     },
     toggleComplete: function (e) {
         if(this.model.isComplete){
-            this.model.isComplete = false;
+            this.model.set('isComplete', false);
         }else{
-            this.model.isComplete = true;
+            this.model.set('isComplete', true);
+            this.model.set('summarizing', true);
         }
         this.model.save();
+
     },
     updateSummary: function(){
-        this.model.summary = this.queryByHook('summary').value;
+        this.model.set('summary', this.queryByHook('summary').value);
         this.model.save();
+        this.model.set('summarizing', false);
+    },
+    showFullTaskWithSummary: function(){
+        this.toggleSummarizationSession();
+    },
+    // INTERNAL FUNCTIONS
+    toggleSummarizationSession: function(){
+        if(this.model.summarizing){
+            this.model.set('summarizing', false);
+        }else{
+            this.model.set('summarizing', true);
+        }
     }
 });

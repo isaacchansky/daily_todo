@@ -32,7 +32,7 @@
 
     // includes/todo.jade compiled template
     templatizer["includes"]["todo"] = function tmpl_includes_todo() {
-        return '<li data-hook="complete" class="todo list-group-item"><div class="task"><input type="checkbox" data-hook="action-complete"/><a data-hook="task"></a><span class="btn-group btn-group-xs pull-right"><a data-hook="action-edit" class="btn btn-default">edit</a><a href="#" data-hook="action-delete" class="btn btn-danger">delete</a></span></div><div class="summary"><textarea data-hook="summary" name="summary" cols="30" rows="3" placeholder="How\'d it go?"></textarea><button data-hook="action-update-summary">done!</button></div></li>';
+        return '<li data-hook="complete" class="todo list-group-item"><div class="task"><input type="checkbox" data-hook="action-complete"/><a data-hook="task"></a><span class="btn-group btn-group-xs pull-right"><a data-hook="action-expand" class="btn btn-default">&darr;</a><a data-hook="action-edit" class="btn btn-default">edit</a><a href="#" data-hook="action-delete" class="btn btn-danger">delete</a></span></div><div data-hook="summary-section" class="summary"><textarea data-hook="summary" name="summary" cols="30" rows="3" placeholder="How\'d it go?"></textarea><button data-hook="action-update-summary">done!</button></div></li>';
     };
 
     // pages/home.jade compiled template
